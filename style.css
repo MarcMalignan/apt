@@ -1,0 +1,89 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background: url('images/bg.jpg') center;
+  background-size: cover;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+#main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.panel {
+  padding: 24px;
+  background: rgba(255, 255, 255, .8);
+  border-radius: 4px;
+  text-align: center;
+}
+.panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.panel-title h1 {
+  margin: 0 8px;
+  font-weight: 500;
+  font-size: 2em;
+}
+
+.lavande {
+  width: 40px;
+  height: 40px;
+  background: url('images/lavande.png') center;
+  background-size: contain;
+}
+
+.countdown-clock {
+  width: 100%;
+  margin-top: 24px;
+  border-collapse: collapse;
+}
+.countdown-clock-numbers {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 5em;
+}
+.countdown-clock-numbers td {
+  padding: 0 24px;
+}
+.countdown-clock-descriptions {
+  font-style: italic;
+  font-weight: 300;
+}
+
+#apt .panel-title h1 {
+  font-size: 4em;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 10px;
+  }
+  .lavande {
+    width: 30px;
+    height: 30px;
+  }
+  .countdown-clock {
+    margin-top: 16px;
+  }
+  .countdown-clock-numbers {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 4em;
+  }
+  .countdown-clock-numbers td {
+    padding: 0 8px;
+  }
+}

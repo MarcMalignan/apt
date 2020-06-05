@@ -1,7 +1,50 @@
 <!doctype html>
 <html>
-  <head>
-      <title>Est-ce bientôt APT ?</title>
-  </head>
-  <body>Hello world!</body>
+
+<head>
+  <title>C'est bientôt APT ?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="images/favicon.png" />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div id="main">
+
+    <div id="countdown" class="panel">
+      <div class="panel-title">
+        <div class="lavande"></div>
+        <h1>C'est bientôt APT ?</h1>
+        <div class="lavande"></div>
+      </div>
+      <table class="countdown-clock">
+        <tr class="countdown-clock-numbers">
+          <td id="clock-days">..</td>
+          <td id="clock-hours">..</td>
+          <td id="clock-minutes">..</td>
+          <td id="clock-seconds">..</td>
+        </tr>
+        <tr class="countdown-clock-descriptions">
+          <td>jours</td>
+          <td>heures</td>
+          <td>minutes</td>
+          <td>secondes</td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="apt" class="panel hidden">
+      <div class="panel-title">
+        <div class="lavande"></div>
+        <h1>C'est APT !!!</h1>
+        <div class="lavande"></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
 </html>
