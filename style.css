@@ -1,15 +1,18 @@
-html {
+html, body {
   height: 100%;
+  margin: 0;
 }
 
 body {
-  height: 100%;
-  margin: 0;
-  background: url('images/bg.jpg') center;
-  background-size: cover;
   overflow: hidden;
+  background: #111 url('images/bg.jpg') center;
+  background-size: cover;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+}
+body.apt {
+  background: url('images/bg_apt.jpg') center;
+  background-size: cover;
 }
 
 #main {
@@ -19,7 +22,8 @@ body {
   height: 100%;
 }
 
-.hidden {
+.hidden,
+.preload {
   display: none;
 }
 

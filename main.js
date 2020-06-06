@@ -26,25 +26,34 @@ const getClock = () => {
   };
 };
 
-const updateClock = () => {
+const updateClock = (clock) => {
+  document.getElementById('clock-days').innerHTML = clock.days;
+  document.getElementById('clock-hours').innerHTML = clock.hours;
+  document.getElementById('clock-minutes').innerHTML = clock.minutes;
+  document.getElementById('clock-seconds').innerHTML = clock.seconds;
+}
+
+const doApt = () => {
+  document.body.classList.add('apt');
+  document.getElementById('countdown').classList.add('hidden');
+  document.getElementById('apt').classList.remove('hidden');
+}
+
+const timerAction = () => {
   const clock = getClock();
   if (clock === null) {
-    document.getElementById('countdown').classList.add('hidden');
-    document.getElementById('apt').classList.remove('hidden');
+    doApt();
     clearInterval(timer);
     return false;
   } else {
-    document.getElementById('clock-days').innerHTML = clock.days;
-    document.getElementById('clock-hours').innerHTML = clock.hours;
-    document.getElementById('clock-minutes').innerHTML = clock.minutes;
-    document.getElementById('clock-seconds').innerHTML = clock.seconds;
+    updateClock(clock);
     return true;
   }
 };
 
 window.onload = () => {
-  const startTimer = updateClock();
+  const startTimer = timerAction();
   if (startTimer) {
-    timer = setInterval(updateClock, 1000);
+    timer = setInterval(timerAction, 1000);
   }
 };
