@@ -1,15 +1,11 @@
-const APT_TIME = new Date('07/10/2020 00:00:00');
+const APT_START = new Date('07/10/2020 00:00:00');
+const APT_END = new Date('07/19/2020 00:00:00');
 
 let timer;
 
 const addZero = (nb) => nb < 10 ? `0${nb}` : nb;
 
-const getClock = () => {
-  const now = Date.now();
-  const diff = APT_TIME.getTime() - now;
-
-  if (diff <= 1000) return null;
-
+const getClock = (diff) => {
   const days = Math.floor(diff / (24 * 60 * 60 * 1000));
   const daysms = diff % (24 * 60 * 60 * 1000);
   const hours = Math.floor(daysms / (60 * 60 * 1000));
@@ -27,6 +23,7 @@ const getClock = () => {
 };
 
 const updateClock = (clock) => {
+  document.getElementById('countdown').classList.remove('hidden');
   document.getElementById('clock-days').innerHTML = clock.days;
   document.getElementById('clock-hours').innerHTML = clock.hours;
   document.getElementById('clock-minutes').innerHTML = clock.minutes;
@@ -35,20 +32,39 @@ const updateClock = (clock) => {
 
 const doApt = () => {
   document.body.classList.add('apt');
+  document.body.classList.remove('end');
   document.getElementById('countdown').classList.add('hidden');
   document.getElementById('apt').classList.remove('hidden');
+  document.getElementById('end').classList.add('hidden');
+}
+
+const doEnd = () => {
+  document.body.classList.remove('apt');
+  document.body.classList.add('end');
+  document.getElementById('countdown').classList.add('hidden');
+  document.getElementById('apt').classList.add('hidden');
+  document.getElementById('end').classList.remove('hidden');
 }
 
 const timerAction = () => {
-  const clock = getClock();
-  if (clock === null) {
-    doApt();
+  const now = Date.now();
+  const diffStart = APT_START.getTime() - now;
+  const diffEnd = APT_END.getTime() - now;
+
+  if (diffEnd <= 0) {
+    doEnd();
     clearInterval(timer);
     return false;
-  } else {
-    updateClock(clock);
+  }
+
+  if (diffStart <= 1000) {
+    doApt();
     return true;
   }
+
+  const clock = getClock(diffStart);
+  updateClock(clock);
+  return true;
 };
 
 window.onload = () => {

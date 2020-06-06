@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>C'est bientôt APT ?</title>
+  <title>Est-ce que c'est Apt ?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
@@ -14,12 +14,13 @@
 <body>
   <div id="main">
 
-    <div id="countdown" class="panel">
+    <div id="countdown" class="panel hidden">
       <div class="panel-title">
         <div class="lavande"></div>
-        <h1>C'est bientôt APT ?</h1>
+        <h1>Est-ce que c'est Apt ?</h1>
         <div class="lavande"></div>
       </div>
+      <h2>Pas encore, Apt c'est dans</h2>
       <table class="countdown-clock">
         <tr class="countdown-clock-numbers">
           <td id="clock-days">..</td>
@@ -44,7 +45,16 @@
       </div>
     </div>
 
+    <div id="end" class="panel hidden">
+      <div class="panel-title">
+        <div class="lavande"></div>
+        <h1>Apt c'est fini...</h1>
+        <div class="lavande"></div>
+      </div>
+    </div>
+
     <img class="preload" src="images/bg_apt.jpg" />
+    <img class="preload" src="images/bg_sad.jpg" />
 
   </div>
 </body>
