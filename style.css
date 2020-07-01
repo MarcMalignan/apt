@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -21,6 +25,7 @@ body.end {
 
 #main {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -84,9 +89,22 @@ body.end {
   font-size: 4em;
 }
 
+#weather {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 16px;
+  padding: 8px;
+}
+.weatherwidget-io {
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   body {
     font-size: 10px;
+  }
+  .panel, #weather {
+    width: calc(100% - 32px);
   }
   .lavande {
     width: 30px;
